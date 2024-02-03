@@ -1,0 +1,22 @@
+{
+    "name": "Sample Chrome Extension", 
+    "description": "Sample Chrome Extension", 
+    "version": "1.0",
+    "manifest_version": 3, 
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["activeTab"],
+    "action": {
+        "default_popup": "popup.html"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["http://127.0.0.1:5500/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "externally_connectable": {
+      "matches": ["http://127.0.0.1:5500/*"] 
+    }
+}
